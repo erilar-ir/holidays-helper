@@ -51,7 +51,7 @@ export default class GetAllCountries {
         if (currency.toLowerCase() === 'ils') {
             return countries.filter(country => country.alpha2Code === 'IL')
         }
-        if (currency.toLowerCase() === 'cfh') {
+        if (currency.toLowerCase() === 'chf') {
             return countries.filter(country => country.alpha2Code === 'CH')
         }
         if (currency.toLowerCase() === 'mad'){

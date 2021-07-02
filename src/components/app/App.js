@@ -307,6 +307,7 @@ export default class App extends Component {
         const currenciesExclusion = ['XCD']
 
         const summary = countryCodes.length + years.length + usNum + euNum
+
         let requestWarning = ''
 
         //check if its not exclusion scenario
