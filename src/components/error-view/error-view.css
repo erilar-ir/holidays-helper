@@ -1,0 +1,28 @@
+.error-view{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.error-view span {
+    display: block;
+    color: chocolate;
+    text-align: center;
+}
+.error-view .boom {
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+.error-view .error-message {
+    font-size: 1.1rem;
+
+}
+.error-view img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 64px;
+
+
+}

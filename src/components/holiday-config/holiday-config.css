@@ -1,0 +1,67 @@
+.country-flag {
+    width: 30px;
+}
+
+.holiday-config {
+    padding-top: 1rem;
+    padding-bottom: 0;
+}
+
+.validation-message {
+    color: #282c34;
+   font-weight: 600;
+    background-color: goldenrod;
+    border-radius: 3px;
+}
+
+.currency-helper {
+    list-style-type: none;
+}
+
+.currency-helper .currency-item {
+    display: inline;
+    padding-right: 10px;
+}
+
+.currency-helper .currency-item.success {
+    color: greenyellow;
+}
+
+.currency-helper .currency-item.no-country {
+    color: red;
+}
+.dates {
+
+}
+.dates input{
+}
+.dates label{
+    width: 50%;
+}
+.currencies {
+
+}
+.currency {
+    margin-right: 10px;
+}
+.currency label {
+    width: 100%;
+}
+.includes {
+
+}
+.includes input{
+}
+.includes .include-on {
+    color: greenyellow;
+}
+.includes label {
+    margin-left: 10px;
+}
+.buttons {
+    width: 100%;
+}
+.get-holidays-btn {
+    line-height: 2rem;
+    width: 100%;
+}

@@ -1,0 +1,45 @@
+.holidays-card {
+    border-radius: 0 0 0 1rem;
+    margin-bottom: .1rem;
+}
+
+.holidays-card .header {
+    background-color: darkslategray;
+
+    border-radius: 0 0 0 1rem;
+    padding-top: 0.7rem;
+}
+
+.holidays-card .header p {
+    font-weight: bold;
+}
+
+.holidays-card .holiday-body {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.holidays-card .holiday-body .holidays-table {
+    margin-bottom: 0;
+}
+
+.holidays-card .holiday-body .holidays-table th {
+    border-top: none;
+    background-color: darkslategray;
+}
+
+.holidays-table .holiday-name {
+    width: 15%;
+    max-width: 15%;
+}
+
+.holidays-table .holiday-country {
+    width: 15%;
+    max-width: 15%;
+}
+
+.holidays-table .holiday-description {
+
+}
