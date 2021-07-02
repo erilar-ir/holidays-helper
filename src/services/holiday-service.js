@@ -1,11 +1,12 @@
 export default class HolidayService {
 
-    _key = process.env.CALENDARIFIC_API
+    _key = process.env.REACT_APP_CALENDARIFIC_API
 
     _apiBase = 'https://calendarific.com/api/v2/holidays'
 
 
     async getResource(url) {
+
         const res = await fetch(`${this._apiBase}?&api_key=${this._key}${url}`)
         if (!res.ok) {
             throw Error(`Could not fetch ${url}, received ${res.status}`)
