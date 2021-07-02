@@ -75,7 +75,7 @@ export default class App extends Component {
 
         if (startDate > endDate) {
             this.setState({
-                validationMessage: 'Start Date should be earlier them End Date '
+                validationMessage: 'Start Date should be earlier then End Date '
             })
             return []
         }
