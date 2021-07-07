@@ -33,7 +33,7 @@ export default class HolidayConfig extends Component {
             //     text: 'Format like Start Date. <br /> End date should be later than start date.'
             // },
             {
-                place: 'top',
+                place: 'top-start',
                 id: 'currency',
                 title: 'Currencies pair',
                 text: 'Write currencies inline like: uahazn.  <br /> Case insensitive. '

@@ -31,7 +31,9 @@ color: greenyellow;
     border-top: none;
     /*background-color: lightslategray;*/
 }
-
+.holidays-table tbody tr {
+    border-left: 1px solid #444;
+}
 .holidays-table .holiday-name {
     width: 15%;
     max-width: 15%;
