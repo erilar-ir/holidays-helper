@@ -127,16 +127,31 @@ export default class HolidayView extends Component {
 
 
     render() {
-        const {update, holidays} = this.props
+        const {update, holidays, requested} = this.props
 
-
-        if (holidays.length === 0 && !update) {
+        if (holidays.length === 0 && requested) {
             return (
                 <div className='holiday-view'>
-                    <p>There is no holidays loaded yet</p>
+                    <div className="row">
+                        <div className="container">
+                            <div className="jumbotron">
+                                <p className='no-holidays'>No holidays found</p>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             )
         }
+        if (holidays.length === 0 && !update) {
+            return (
+                <div className='holiday-view'>
+                    <p>Please request some holidays...</p>
+                </div>
+            )
+        }
+
         if (update) {
             return <Spinner/>
         }

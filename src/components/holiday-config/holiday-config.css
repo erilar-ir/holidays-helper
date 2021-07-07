@@ -82,6 +82,9 @@
     width: 100%;
 }
 .get-holidays-btn {
+
+
+    font-weight: bold;
     line-height: 2rem;
     width: 100%;
 }

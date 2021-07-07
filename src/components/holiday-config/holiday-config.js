@@ -10,8 +10,6 @@ export default class HolidayConfig extends Component {
     constructor() {
         super();
         this.tippyRef = React.createRef()
-        // this.currencyInput = React.createRef()
-        // this.endDateInput = React.createRef()
     }
 
     state = {
@@ -26,12 +24,6 @@ export default class HolidayConfig extends Component {
                 title: 'Dates',
                 text: 'Write start date digits in next order: month, day, year. Use / or . separator. Like it shown on placeholder. <span class="yellow-text">End date should be later than start date.</span>'
             },
-            // {
-            //     place: 'bottom-end',
-            //     id: 'endDate',
-            //     title: 'End Date',
-            //     text: 'Format like Start Date. <br /> End date should be later than start date.'
-            // },
             {
                 place: 'top-start',
                 id: 'currency',
@@ -91,8 +83,6 @@ export default class HolidayConfig extends Component {
                 theme: 'material',
                 placement: place,
                 trigger: 'click',
-                // appendTo: 'parent',
-                // animateFill: true,
                 maxWidth: 350,
                 inlinePositioning: true,
                 moveTransition: 'transform 0.2s ease-out',
@@ -197,7 +187,6 @@ export default class HolidayConfig extends Component {
                                     className='form-control form-control-sm '
                                     value={currencyText}
                                     onChange={verifyCurrency}
-                                    // onKeyUp={event => event.key === 'Enter' ? this.onCurrencySelect() : null}
                                 />
                             </label>
                         </div>
@@ -228,7 +217,7 @@ export default class HolidayConfig extends Component {
                     <div id='buttons'
                          className='buttons form-group d-flex '>
                         <button id='getHolidays'
-                                className="get-holidays-btn btn btn-primary"
+                                className="btn btn-success get-holidays-btn "
                                 disabled={disableRequest || requestOverhead}
                                 onClick={() => getHolidays(countryCodes, years)}>Get Holidays
                         </button>
@@ -236,7 +225,6 @@ export default class HolidayConfig extends Component {
                 </div>
 
 
-                {/*<button className="btn btn-primary" onClick={this.onCurrencySelect}>Set Holiday Config</button>*/}
 
 
             </div>

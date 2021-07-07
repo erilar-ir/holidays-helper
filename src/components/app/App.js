@@ -28,7 +28,8 @@ export default class App extends Component {
         years: [],
         update: false,
         eurCheck: false,
-        usCheck: false
+        usCheck: false,
+        requested: false
     }
 
 
@@ -189,7 +190,7 @@ export default class App extends Component {
 
         await this.setState({
             holidays: [],
-            update: true
+            update: true,
         })
 
         let countries = countryCodes
@@ -290,7 +291,8 @@ export default class App extends Component {
             }
         }
         await this.setState({
-            update: false
+            update: false,
+            requested: true
         })
 
     }
@@ -340,7 +342,8 @@ export default class App extends Component {
             usCheck,
             eurCheck,
             currencyText,
-            requestWarning
+            requestWarning,
+            requested
         } = this.state
         // console.log('update value', this.state.update)
         const disableRequest = () => {
@@ -373,7 +376,7 @@ export default class App extends Component {
                         requestWarning={requestWarning}
                     />
                     {/*<button className="btn btn-danger" onClick={this.getMultipleCountriesTemp}>Get Multiple Countries for Currencies </button>*/}
-                    <HolidayView holidays={holidays} update={update}/>
+                    <HolidayView holidays={holidays} update={update} requested={requested}/>
                 </ErrorBoundary>
             </div>
         );
