@@ -5,8 +5,20 @@
 .holiday-config {
     padding-top: 1rem;
     padding-bottom: 0;
+    min-width: 440px;
 }
-
+.holiday-config .info-center {
+    position: absolute;
+    top: 0.4rem;
+    left: 0.5rem;
+}
+.info-center:hover{
+    color: greenyellow;
+    cursor: pointer;
+}
+.info-center.active{
+    color: greenyellow;
+}
 .validation-message {
     color: #282c34;
    font-weight: 600;
@@ -51,6 +63,10 @@
 
 }
 .includes input{
+
+}
+.includes input:hover{
+    cursor: pointer;
 }
 .includes .include-on {
     color: greenyellow;
@@ -64,4 +80,48 @@
 .get-holidays-btn {
     line-height: 2rem;
     width: 100%;
+}
+
+.tippy-box {
+    margin-bottom: 10px;
+}
+.tippy-title {
+    color: greenyellow;
+    border-bottom: 1px solid #dadada;
+    margin-bottom: 0.3rem;
+}
+.tippy-body{
+    /*font-size: 0.8rem;*/
+
+}
+.tippy-body .yellow-text {
+    color: darkorange;
+    font-weight: bold;
+}
+/*Extra small devices (portrait phones, less than 576px)*/
+/*No media query since this is the default in Bootstrap*/
+
+
+/*Small devices (landscape phones, 470px and up)*/
+@media (min-width: 470px) {
+
+}
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
 }

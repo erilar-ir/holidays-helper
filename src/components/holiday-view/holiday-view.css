@@ -4,8 +4,8 @@
 }
 
 .holidays-card .header {
-    background-color: darkslategray;
-
+    /*background-color: lightslategray;*/
+color: greenyellow;
     border-radius: 0 0 0 1rem;
     padding-top: 0.7rem;
 }
@@ -26,8 +26,10 @@
 }
 
 .holidays-card .holiday-body .holidays-table th {
+    color: greenyellow;
+
     border-top: none;
-    background-color: darkslategray;
+    /*background-color: lightslategray;*/
 }
 
 .holidays-table .holiday-name {

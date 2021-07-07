@@ -73,12 +73,14 @@ export default class HolidayView extends Component {
     renderHolidays = (holidays) => {
         // console.log('rendering holidays:', holidays)
         return holidays.map(item => {
+            const datedDate = new Date(item.date)
+            const formatedDate = new Intl.DateTimeFormat('en-US', {weekday: "long", month: "short", year: "numeric", day: "numeric"}).format(datedDate)
             return (
                 <div className="row" key={item.date}>
                     <div className="container card holidays-card">
                         <div className="row">
                             <div className="col-2 header">
-                                <p className=''>{item.date}</p>
+                                <p className=''>{formatedDate}</p>
                             </div>
                             <div className="col-10 container-fluid holiday-body">
 
