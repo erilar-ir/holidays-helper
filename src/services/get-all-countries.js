@@ -60,6 +60,9 @@ export default class GetAllCountries {
         if (currency.toLowerCase() === 'jpy'){
             return countries.filter(country => country.alpha2Code === 'JP')
         }
+        if (currency.toLowerCase() === 'dzd'){
+            return countries.filter(country => country.alpha2Code === 'DZ')
+        }
 
         // console.log(`Currency in service: ${currency}`)
         return countries.filter(country => {

@@ -136,15 +136,21 @@ export default class App extends Component {
             }
 
 
-            const filteredCountries = fetchedCountries.filter(item => {
+            const filteredCountries = fetchedCountries.filter(fetchedCountry => {
                 if (countries.length === 0) {
                     return true
                 }
-                return !countries.some(el => el.alpha2Code === item.alpha2Code);
+                return !countries.some(existingCountry => existingCountry.alpha2Code === fetchedCountry.alpha2Code);
 
             })
+            const currencyDetails = fetchedCountries.find(country => {
+                return country.currencies.find(countryCurrency => {
+                    return countryCurrency.code === item.toUpperCase()
+                })
+            }).currencies.find(curr => curr.code === item.toUpperCase())
 
-            currencyHelper = [...currencyHelper, {currency: item, ok: true}]
+
+            currencyHelper = [...currencyHelper, {currency: item, ok: true, name: currencyDetails.name, symbol: currencyDetails.symbol}]
             return countries = [...countries, ...filteredCountries]
 
         })
@@ -175,14 +181,14 @@ export default class App extends Component {
 
     }
 
-    addUSandEUHolidays = (event) => {
+    addUSandEUHolidays = async (event) => {
         const name = event.target.name
         const checked = event.target.checked
 
-        this.setState({
+        await this.setState({
             [name]: checked
         })
-        this.checkRequestLength()
+        await this.checkRequestLength()
     }
 
     getHolidays = async (countryCodes, years) => {
@@ -297,30 +303,32 @@ export default class App extends Component {
 
     }
 
-
     checkRequestLength = () => {
         const {countryCodes, years, usCheck, eurCheck, currencyHelper} = this.state
 
         const usNum = usCheck ? 1 : 0
         const euNum = eurCheck ? 1 : 0
 
+        // const usCheckText = usCheck ? ' and US added' : ''
+        // const euCheckText = eurCheck ? ' and EU added' : ''
+
         //get currencies for exclusion
         const currencies = currencyHelper.map(item => item.currency)
-        const currenciesExclusion = ['XCD']
-
+        const currenciesExclusion = ['xcd']
         const summary = countryCodes.length + years.length + usNum + euNum
-
+        let maxLength
         let requestWarning = ''
-
         //check if its not exclusion scenario
-        if (currencies.some(item => currenciesExclusion.includes(item))) {
-            if (summary > 12) {
-                requestWarning = 'Too many potential requests'
+        if (currencies.some(item => currenciesExclusion.includes(item.toLowerCase()))) {
+            maxLength = 13
+            if (summary > maxLength) {
+                requestWarning = `Too many potential requests. `
             }
         }
-        if (!currencies.some(item => currenciesExclusion.includes(item))) {
-            if (summary > 6) {
-                requestWarning = 'Too many potential requests'
+        if (!currencies.some(item => currenciesExclusion.includes(item.toLowerCase()))) {
+            maxLength = 6
+            if (summary > maxLength) {
+                requestWarning = `Too many potential requests. `
             }
         }
 

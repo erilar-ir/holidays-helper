@@ -98,11 +98,15 @@
     border-bottom: 1px solid #dadada;
     margin-bottom: 0.3rem;
 }
+.tippy-title-currency {
+    color: greenyellow;
+
+}
 .tippy-body{
     /*font-size: 0.8rem;*/
 
 }
-.tippy-body .yellow-text {
+.tippy-box .yellow-text {
     color: darkorange;
     font-weight: bold;
 }

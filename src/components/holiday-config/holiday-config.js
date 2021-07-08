@@ -86,7 +86,6 @@ export default class HolidayConfig extends Component {
                 maxWidth: 350,
                 inlinePositioning: true,
                 moveTransition: 'transform 0.2s ease-out',
-
                 sticky: 'false',
                 plugins: [
                     inlinePositioning,
@@ -94,8 +93,6 @@ export default class HolidayConfig extends Component {
                     // animateFill
                 ],
                 content: tippyContentTemplate(title, text)
-
-
             })
         })
 
@@ -107,12 +104,23 @@ export default class HolidayConfig extends Component {
             return currencyHelper.map(({currency, ok}) => {
                 const classNames = ok ? 'success' : 'no-country'
                 return (
-                    <li key={currency} className={`currency-item ${classNames}`}>{currency.toUpperCase()}</li>
+                    <li id={currency} key={currency} className={`currency-item ${classNames}`}>{currency.toUpperCase()}</li>
                 )
             })
         }
     }
-
+    createCurrencyTippies = (currencyHelper) => {
+        currencyHelper.forEach(({currency, name, ok}) => {
+            const tippyContent = ok ? `<span class='tippy-title-currency'>${name}</span>` : '<span class="yellow-text">Wrong currency</span>'
+            tippy(`#${currency}`, {
+                allowHTML: true,
+                theme: 'material',
+                placement: 'top',
+                trigger: 'mouseenter focus',
+                content: tippyContent
+            })
+        })
+    }
 
     render() {
         const {
@@ -131,6 +139,7 @@ export default class HolidayConfig extends Component {
             currencyText
         } = this.props
         const currencies = this.renderCurrencyHelper(currencyHelper)
+        this.createCurrencyTippies(currencyHelper)
         const requestOverhead = requestWarning.length > 0
 
         const checkedUs = usChecked ? 'include-on' : ''
