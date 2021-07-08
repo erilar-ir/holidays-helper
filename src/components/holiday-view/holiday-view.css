@@ -10,8 +10,7 @@
 }
 
 .holidays-card .header {
-    /*background-color: lightslategray;*/
-color: greenyellow;
+    color: greenyellow;
     border-radius: 0 0 0 1rem;
     padding-top: 0.7rem;
 }
@@ -35,7 +34,6 @@ color: greenyellow;
     color: greenyellow;
 
     border-top: none;
-    /*background-color: lightslategray;*/
 }
 .holidays-table tbody tr {
     border-left: 1px solid #444;

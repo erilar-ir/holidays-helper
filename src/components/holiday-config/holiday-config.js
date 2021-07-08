@@ -155,7 +155,7 @@ export default class HolidayConfig extends Component {
                 </div>
 
                 <div className="row form-group">
-                    <div className='col-sm-6 form-group dates'>
+                    <div className='col-lg-6 dates'>
                         <label id='startDateLabel' htmlFor='startDate' className='form-label'>
                             Start Date
 
@@ -175,8 +175,8 @@ export default class HolidayConfig extends Component {
                         </label>
 
                     </div>
-                    <div className="col-sm-6 currencies form-group  d-flex justify-content-end ">
-                        <div className="currency container-fluid">
+                    <div className="col-lg-6 currencies d-flex justify-content-end ">
+                        <div className="container-fluid currency">
                             <label id='currencyLabel' htmlFor='currencySelect'>
                                 Currencies
                                 <input

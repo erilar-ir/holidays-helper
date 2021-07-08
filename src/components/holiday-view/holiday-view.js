@@ -74,7 +74,7 @@ export default class HolidayView extends Component {
         // console.log('rendering holidays:', holidays)
         return holidays.map(item => {
             const datedDate = new Date(item.date)
-            const formatedDate = new Intl.DateTimeFormat('en-US', {weekday: "long", month: "short", year: "numeric", day: "numeric"}).format(datedDate)
+            const formatedDate = new Intl.DateTimeFormat('en-US', {weekday: "short", month: "short", year: "numeric", day: "numeric"}).format(datedDate)
             return (
                 <div className="row" key={item.date}>
                     <div className="container card holidays-card">
@@ -129,7 +129,7 @@ export default class HolidayView extends Component {
     render() {
         const {update, holidays, requested} = this.props
 
-        if (holidays.length === 0 && requested) {
+        if (holidays.length === 0 && !update && requested) {
             return (
                 <div className='holiday-view'>
                     <div className="row">
