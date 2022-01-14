@@ -1,4 +1,5 @@
 The purpose of this app is to gather info about official holidays for currencies and dates defined by user. It can be used for better understanding if you can plan some currency operations for certain dates, for example. 
+
 Deployment available at https://holidays-helper.herokuapp.com/
 
 App is written on Javascript with React. There is a basic Node.js server to run everything on host.  
